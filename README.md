@@ -63,6 +63,6 @@
 - 打包工具 -> 输出后的结果（js模块）
 - 打包（支持 js 的模块化）
 
-## 手动配置 webpack
+### 手动配置 webpack
 - 默认配置文件的名字 webpack.config.js 
 - mode 分为 production 和 development
