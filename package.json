@@ -1,0 +1,12 @@
+{
+  "name": "learn_webpack4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lexgooo/learn_webpack4.git",
+  "author": "lexgooo <beyondc@foxmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.36.0",
+    "webpack-cli": "^3.3.6"
+  }
+}
