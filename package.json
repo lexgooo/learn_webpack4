@@ -6,10 +6,11 @@
   "author": "lexgooo <beyondc@foxmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.config.my.js"
+    "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
     "webpack": "^4.36.0",
     "webpack-cli": "^3.3.6"
-  }
+  },
+  "dependencies": {}
 }
