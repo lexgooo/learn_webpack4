@@ -5,8 +5,8 @@
 - [x] 1.课程介绍  
 - [x] 2.webpack 基础配置
 - [x] 3.webpack 打包出的文件解析
-- [ ] 4.Html插件
-- [ ] 5.样式处理（1）
+- [x] 4.Html插件
+- [x] 5.样式处理（1）
 - [ ] 6.样式处理（2）
 - [ ] 7.转化ES6语法
 - [ ] 8.处理js语法及校验
@@ -66,3 +66,11 @@
 ### 手动配置 webpack
 - 默认配置文件的名字 webpack.config.js 
 - mode 分为 production 和 development
+
+### 本地服务
+- 本地服务: webapck-dev-server
+- html插件: html-webpack-plugin
+- html-webpack-plugin 里的 `hash` 是在`.js`后面的，而 `output` 配置里面的 `hash` 可以自己指定位置，比较灵活
+- `production` 和 `development` 两个模式的区别是，是否对打包的 js 文件进行
+- `loader` 加载顺序，是从下到上，从右到左
+- `css-loader` 是用来转化 css 模块的，就是把 css 代码从 css 文件中提取出来，`style-loader` 是用来把提取出的样式加到 html 模板文件中。
