@@ -1,7 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCss = require('optimize-css-assets-webpack-plugin')
+const UglifyJs = require('uglifyjs-webpack-plugin')
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/index.js',
     output: {
         filename: 'bundle.[hash:8].js',
@@ -23,28 +26,31 @@ module.exports = {
                 collapseWhitespace: true,
                 removeAttributeQuotes: true
             }
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'main.css'
         })
     ],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: [{
-                    loader: 'style-loader',
-                    options: {
-                        insertAt: 'top'
-                    }
-                }, 'css-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.less$/,
-                use: [{
-                    loader: 'style-loader',
-                    options: {
-                        insertAt: 'top'
-                    }
-                }, 'css-loader', 'less-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader', 'postcss-loader']
             }
+        ]
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJs({
+                cache: true,
+                parallel: true,
+                sourceMap: true
+            }),
+            new OptimizeCss({})
         ]
     }
 }

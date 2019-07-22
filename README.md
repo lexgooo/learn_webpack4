@@ -8,6 +8,14 @@
 - [x] 4.Html插件
 - [x] 5.样式处理（1）
 - [ ] 6.样式处理（2）
+    - [x] 抽离 css 文件
+    - [ ] 自动添加样式前缀(没成功)
+    - [x] 压缩 css 资源（需要把模式设为 `production`）
+    - [ ] 压缩 js 资源(报错)  
+    ```bash
+    ERROR in bundle.5c5ec55a.js from UglifyJs
+    Unexpected token: name «str», expected: punc «;» [./src/index.js:1,0][bundle.5c5ec55a.js:91,4]
+    ```
 - [ ] 7.转化ES6语法
 - [ ] 8.处理js语法及校验
 - [ ] 9.全局变量引入问题
@@ -74,3 +82,7 @@
 - `production` 和 `development` 两个模式的区别是，是否对打包的 js 文件进行
 - `loader` 加载顺序，是从下到上，从右到左
 - `css-loader` 是用来转化 css 模块的，就是把 css 代码从 css 文件中提取出来，`style-loader` 是用来把提取出的样式加到 html 模板文件中。
+- 把 css 抽离为单独文件的插件 `mini-css-extract-plugin`
+- 自动添加样式前缀 loader `postcss-loader` `autoprefixer`
+- 优化压缩 css 资源插件 `optimize-css-assets-webpack-plugin`
+- 优化压缩 js 资源插件 `uglifyjs-webpack-plugin`
