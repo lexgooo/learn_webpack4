@@ -7,7 +7,7 @@
 - [x] 3.webpack 打包出的文件解析
 - [x] 4.Html插件
 - [x] 5.样式处理（1）
-- [ ] 6.样式处理（2）
+- [x] 6.样式处理（2）
     - [x] 抽离 css 文件
     - [ ] 自动添加样式前缀(没成功)
     - [x] 压缩 css 资源（需要把模式设为 `production`）
@@ -16,7 +16,7 @@
     ERROR in bundle.5c5ec55a.js from UglifyJs
     Unexpected token: name «str», expected: punc «;» [./src/index.js:1,0][bundle.5c5ec55a.js:91,4]
     ```
-- [ ] 7.转化ES6语法
+- [x] 7.转化ES6语法
 - [ ] 8.处理js语法及校验
 - [ ] 9.全局变量引入问题
 - [ ] 10.图片处理
@@ -86,3 +86,4 @@
 - 自动添加样式前缀 loader `postcss-loader` `autoprefixer`
 - 优化压缩 css 资源插件 `optimize-css-assets-webpack-plugin`
 - 优化压缩 js 资源插件 `uglifyjs-webpack-plugin`
+- 转化 es6 `babel-loader`(转化加载器), `@babel/core`(babel核心模块) `@babel/preset-env`
