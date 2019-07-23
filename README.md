@@ -11,7 +11,7 @@
     - [x] 抽离 css 文件
     - [ ] 自动添加样式前缀(没成功)
     - [x] 压缩 css 资源（需要把模式设为 `production`）
-    - [ ] 压缩 js 资源(报错)  
+    - [x] 压缩 js 资源(报错)  
     ```bash
     ERROR in bundle.5c5ec55a.js from UglifyJs
     Unexpected token: name «str», expected: punc «;» [./src/index.js:1,0][bundle.5c5ec55a.js:91,4]
