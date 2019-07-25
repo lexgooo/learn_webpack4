@@ -17,8 +17,8 @@
     Unexpected token: name «str», expected: punc «;» [./src/index.js:1,0][bundle.5c5ec55a.js:91,4]
     ```
 - [x] 7.转化ES6语法
-- [ ] 8.处理js语法及校验
-- [ ] 9.全局变量引入问题
+- [x] 8.处理js语法及校验
+- [x] 9.全局变量引入问题
 - [ ] 10.图片处理
 - [ ] 11.打包文件分类
 - [ ] 12.打包多页应用
@@ -87,3 +87,31 @@
 - 优化压缩 css 资源插件 `optimize-css-assets-webpack-plugin`
 - 优化压缩 js 资源插件 `uglifyjs-webpack-plugin`
 - 转化 es6 `babel-loader`(转化加载器), `@babel/core`(babel核心模块) `@babel/preset-env`
+
+### 处理高级语法
+- es6 代码运行时依赖 `@babel/plugin-transform-runtime` (开发依赖) `@babel/runtime` (生产依赖)
+- es6 高级语法支持 `@babel/polyfill` (生产依赖)
+- js 语法校验 `eslint`， `eslint-loader`
+
+### 全局变量引入
+- 暴露全局变量 `expose-loader` (内联 loader)
+- `pre` 前端执行的loader  
+- `normal` 普通 loader
+- 内联 loader
+- `post` 后置loader
+
+### 引入全局 jquery 的方式
+- `expose-loader` 暴露到 window 上
+- `providePlugin` 给每个人提供一个 `$`
+- 引入不打包
+
+### 图片处理
+ - 图片引入方式
+    - 在 js 中创建图片来引入
+    - 在 css 中引入 background: url()
+    - 在 img 标签中引入 ` <img src="">`
+
+- `file-loader` 默认会在内部生成一张图片到 `build` 目录下。
+- 把生成的图片名字返回回来 
+- `html-withimg-loader` 把 html 中的图片路径转成有用的路径
+- `url-loader` 解析文件路径，可以配置图片小于多少 k 使用 base64 来显示

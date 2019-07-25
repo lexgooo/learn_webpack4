@@ -29,10 +29,23 @@ module.exports = {
 		}),
 		new MiniCssExtractPlugin({
 			filename: "main.css"
-		})
+        })
 	],
 	module: {
 		rules: [
+            {
+                test: /\.html$/,
+                use: 'html-withimg-loader'
+            },
+            {
+                test: /\.(jpg|jpeg|png|gif)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 200*1024
+                    }
+                }
+            },
 			{
 				test: /\.css$/,
 				use: [
@@ -64,13 +77,16 @@ module.exports = {
 							[
 								"@babel/plugin-proposal-class-properties",
 								{ loose: true }
-							]
+                            ],
+                            '@babel/plugin-transform-runtime'
 						]
 					}
-				}
+                },
+                include: path.resolve(__dirname, './src'),
+                exclude: /node_modules/
 			}
 		]
-	},
+    },
 	optimization: {
 		minimizer: [
 			new UglifyJs({

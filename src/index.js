@@ -1,23 +1,36 @@
-// let str = require('./a');
+// import $ from 'jquery'
 
-// console.log('hello ' + str)
+// console.log($)
+import './index.less'
+import logo from './logo.jpeg'
 
-require('./index.css')
-require('./index.less')
+let img = new Image()
+img.src = logo
 
-fn = () => {
-    console.log('aaa')
-}
-@log
-class A {
-    constructor() {
-        this.a = a
-    }
-}
+document.body.appendChild(img)
 
-let a = new A(1)
-console.log(a.a)
+// require('@babel/polyfill')
+// // let str = require('./a');
+// require('./a')
 
-function log(target) {
-    console.log(target, 23)
-}
+// // console.log('hello ' + str)
+
+// require('./index.css')
+// require('./index.less')
+
+// let fn = () => {
+//     console.log('aaa')
+// }
+// @log
+// class A {
+//     constructor() {
+//         this.a = a
+//     }
+// }
+
+// let a = new A(1)
+// console.log(a.a)
+
+// function log(target) {
+//     console.log(target, 23)
+// }
