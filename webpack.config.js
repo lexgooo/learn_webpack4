@@ -8,7 +8,8 @@ module.exports = {
 	entry: "./src/index.js",
 	output: {
 		filename: "bundle.js",
-		path: path.resolve(__dirname, "./dist")
+		path: path.resolve(__dirname, "./dist"),
+		// publicPath: 'http://www.baidu.com'
 	},
 	devServer: {
 		port: "3000",
@@ -19,16 +20,16 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			hash: true,
-			compress: true,
+			// compress: true,
 			template: "src/index.html",
 			filename: "index.html",
-			minify: {
-				collapseWhitespace: true,
-				removeAttributeQuotes: true
-			}
+			// minify: {
+			// 	collapseWhitespace: true,
+			// 	removeAttributeQuotes: true
+			// }
 		}),
 		new MiniCssExtractPlugin({
-			filename: "main.css"
+			filename: "css/main.css"
         })
 	],
 	module: {
@@ -42,7 +43,9 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
-                        limit: 200*1024
+						limit: 1,
+						outputPath: '/imgs/',
+						publicPath: 'http://www.google.com'
                     }
                 }
             },
